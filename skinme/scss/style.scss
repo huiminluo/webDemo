@@ -1,0 +1,44 @@
+/*
+@mixin 指令允许我们定义一个可以在整个样式表中重复使用的样式。
+*/
+@mixin bg_color($color) { //更换背景颜色
+	background-color: $color ;
+	[data-theme = "theme1"] & {
+		background-color: $background-color-theme1 !important;
+	}
+	[data-theme = "theme2"] & {
+		background-color: $background-color-theme2 !important;
+	}		
+}
+ 
+ @mixin bg_img($image) { //更换背景图片
+ 	background-image: $image ;
+ 	[data-theme = "theme1"] & {
+ 		background-image: url($background-image-theme1)!important;
+ 	}
+ 	[data-theme = "theme2"] & {
+ 		background-image: url($background-image-theme2)!important;
+ 	}
+ }
+  
+ 
+@mixin ft_color($color) { //更换文字颜色
+	color: $color;
+	[data-theme = "theme1"] & {
+		color: $text-color-theme1 !important;
+	}
+	[data-theme = "theme2"] & {
+		color: $text-color-theme2 !important;
+	}	
+}
+
+@mixin login_content($content) { //更换image标签内容
+	content: $content;
+	[data-theme = "theme1"] & {
+		content:url($text-content-theme1) !important;
+	}
+	[data-theme = "theme2"] & {
+		content: url($text-content-theme2) !important;
+	}	
+}
+
